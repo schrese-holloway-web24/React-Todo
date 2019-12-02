@@ -1,5 +1,8 @@
 import React from 'react';
 
+//components
+import Todo from './components/TodoComponents/Todo';
+
 const todo = [
   {
     task: 'Organize Garage',
@@ -26,6 +29,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <Todo /> 
       </div>
     );
   }
