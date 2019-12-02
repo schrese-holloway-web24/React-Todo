@@ -3,6 +3,7 @@ import React from 'react';
 //components
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import 
 
 const todos = [
   {
@@ -13,7 +14,7 @@ const todos = [
   {
     task: 'Bake Cookies',
     id: 1528817084358,
-    completed: false
+    completed: true
   }
 ]
 class App extends React.Component {
@@ -24,6 +25,7 @@ class App extends React.Component {
     super();
     this.state = {
       todos: todos, 
+      
     }
   }
 
@@ -38,11 +40,35 @@ class App extends React.Component {
     })
   }
 
+  toggler = id => {
+    this.setState({
+      todos: this.state.todos.map(i => {
+        if(i.id === id) {
+          return {
+            ...i,
+            completed: !i.completed 
+          } 
+        } else {
+          return i
+        }
+      }) 
+    })
+  }
+  clear = () => {
+    this.setState({
+      todos: this.state.todos.filter(i => {
+        console.log(i.completed)
+        return i.completed === false
+      })
+    })
+  }
+  
+
   render() {
     return (
-      <div>
+      <div className='app'>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList todos={this.state.todos}/>
+        <TodoList todos={this.state.todos} toggler = {this.toggler} clear = {this.clear}/>
         <TodoForm addTodo={this.addTodo}/>
       </div>
     );
