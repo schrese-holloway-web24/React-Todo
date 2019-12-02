@@ -29,7 +29,7 @@ class App extends React.Component {
 
   addTodo = newTodoText => {
     const newTodo = {
-      task: '',
+      task: newTodoText,
       id: Date.now(),
       completed: false
     }
