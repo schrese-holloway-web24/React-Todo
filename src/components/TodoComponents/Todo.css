@@ -1,0 +1,17 @@
+.task{
+    background: #FDD1F5;
+    cursor: pointer
+}
+
+.task.completed{
+    text-decoration: line-through;
+    background: #AE1FCC
+}
+
+/* 
+#66CCAA
+#1F9971
+#99FFA4
+#FDD1F5
+#AE1FCC
+*/
