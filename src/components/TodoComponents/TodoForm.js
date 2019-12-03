@@ -74,7 +74,7 @@ const Input = styled.input`
 `
 const ButtonContainer = styled.div`
     width: 30%;
-    padding-left: 2%;
+    padding-left: 3%;
 `
 
 const AddButton = styled.button`

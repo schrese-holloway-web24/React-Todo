@@ -101,5 +101,5 @@ const List = styled.h4`
   justify-content: flex-start;
   font-size: 2rem;
   margin: auto 0;
-  padding-left: 5%;
+  padding: 5%;
 `
