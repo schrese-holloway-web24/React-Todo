@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import styled from 'styled-components';
 class TodoForm extends Component {
     constructor() {
         super();
@@ -26,20 +26,61 @@ class TodoForm extends Component {
     render() {
         console.log('rendering form')
         return(
-            <div>
-                <form onSubmit = {this.submitHandler}>
-                    <input 
-                        type = 'text'
-                        name = 'todo'
-                        onChange = {this.changeHandler}
-                        value = {this.state.newTodo}
-                        />
-                    <button>Add</button>
-                </form>
+            <FormContainer>
+                <Form onSubmit = {this.submitHandler}>
+                    <InputContainer>
+                        <Input 
+                            type = 'text'
+                            name = 'todo'
+                            onChange = {this.changeHandler}
+                            value = {this.state.newTodo}
+                            />
+                    </InputContainer>
+                    <ButtonContainer>
+                        <AddButton>Add</AddButton>
+                    </ButtonContainer>
+                </Form>
                 
-            </div>
+            </FormContainer>
         )
     }
 }
 
 export default TodoForm;
+
+const FormContainer = styled.div`
+    display: flex;
+    justify-content: center;
+
+`
+
+const Form = styled.form`
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    padding-left: 5%;
+`
+const InputContainer = styled.div`
+    width: 70%;
+`
+
+const Input = styled.input`
+    background: #FDD1F5;
+    height: 2.2rem;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #AE1FCC;
+    outline: 0;
+`
+const ButtonContainer = styled.div`
+    width: 30%;
+    padding-left: 2%;
+`
+
+const AddButton = styled.button`
+    background: #99FFA4;
+    border: 1px solid #99FFA4;
+    height: 2.4rem;
+    width: 80%;
+    margin: 0 auto;
+`

@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 //components
 import TodoList from './components/TodoComponents/TodoList';
@@ -14,7 +15,7 @@ const todos = [
   {
     task: 'Bake Cookies',
     id: 1528817084358,
-    completed: true
+    completed: false
   }
 ]
 class App extends React.Component {
@@ -66,13 +67,39 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='app'>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList todos={this.state.todos} toggler = {this.toggler} clear = {this.clear}/>
+      <TodoApp>
+        <Welcome>Welcome to your Todo App!</Welcome>
         <TodoForm addTodo={this.addTodo}/>
-      </div>
+        <List>Todo:</List>
+        <TodoList todos={this.state.todos} toggler = {this.toggler} clear = {this.clear}/>
+        
+      </TodoApp>
     );
   }
 }
 
 export default App;
+
+const TodoApp = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 3px solid green;
+  width: 30%;
+  margin: 0 auto;
+  background: #66CCAA;
+`
+
+const Welcome = styled.h2`
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+`
+
+const List = styled.h4`
+  display: flex;
+  justify-content: flex-start;
+  font-size: 2rem;
+  margin: auto 0;
+  padding-left: 5%;
+`

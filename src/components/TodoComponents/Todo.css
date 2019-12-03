@@ -1,25 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.task{
+    background: #FDD1F5;
+    cursor: pointer
 }
 
-body {
-  background-color: #2d2d37;
+.task.completed{
+    text-decoration: line-through;
+    background: #AE1FCC
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-div,
-p,
-span {
-  color: white;
-  font-family: 'Roboto', sans-serif;
-}
+/* 
+#66CCAA
+#1F9971
+#99FFA4
+#FDD1F5
+#AE1FCC
+*/
